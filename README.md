@@ -13,14 +13,14 @@ The Faculty Data Management Application is a web-based solution designed to stre
 ## Key Features
 <ul>
 <li><strong>Faculty Data CRUD:</strong> Manage faculty data with Create, Read, Update, and Delete operations.</li>
-<li>**Personal Data Management:** Organize and update faculty's personal information.</li>
-<li>**Supervision Data Management:** Record and track academic supervision activities conducted by faculty.</li>
-<li>**Academic Assistance Data:** Manage data related to academic assistance provided by faculty.</li>
-<li>**Research and Community Service Data:** Monitor and manage research and community service activities of faculty.</li>
-<li>**Teaching and Course Data:** Store information about courses taught and teaching activities.</li>
-<li>**Achievements and Publications Data:** Manage information regarding academic achievements and publications.</li>
-<li>**Social Media Login:** Login functionality using social media accounts such as Google.</li>
-<li>**Multi-User Roles:** Supports different types of users with distinct roles, including faculty, faculty admin, university admin, and department admin.</li>
+<li><strong>Personal Data Management:</strong>  Organize and update faculty's personal information.</li>
+<li><strong>Supervision Data Management:</strong>  Record and track academic supervision activities conducted by faculty.</li>
+<li><strong>Academic Assistance Data:</strong>  Manage data related to academic assistance provided by faculty.</li>
+<li><strong>Research and Community Service Data:</strong>  Monitor and manage research and community service activities of faculty.</li>
+<li><strong>Teaching and Course Data:</strong>  Store information about courses taught and teaching activities.</li>
+<li><strong>Achievements and Publications Data:</strong>  Manage information regarding academic achievements and publications.</li>
+<li><strong>Social Media Login:</strong>  Login functionality using social media accounts such as Google.</li>
+<li><strong>Multi-User Roles:</strong>  Supports different types of users with distinct roles, including faculty, faculty admin, university admin, and department admin.</li>
 </ul>
 
 You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
