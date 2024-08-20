@@ -12,7 +12,7 @@ The Faculty Data Management Application is a web-based solution designed to stre
 
 ## Key Features
 <ul>
-<li>**Faculty Data CRUD:** Manage faculty data with Create, Read, Update, and Delete operations.</li>
+<li><strong>Faculty Data CRUD:</strong> Manage faculty data with Create, Read, Update, and Delete operations.</li>
 <li>**Personal Data Management:** Organize and update faculty's personal information.</li>
 <li>**Supervision Data Management:** Record and track academic supervision activities conducted by faculty.</li>
 <li>**Academic Assistance Data:** Manage data related to academic assistance provided by faculty.</li>
