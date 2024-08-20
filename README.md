@@ -10,9 +10,18 @@
 ## Faculty Data Management Application
 The Faculty Data Management Application is a web-based solution designed to streamline the management of faculty data in higher education institutions. This application offers various features to support efficient administration and management of faculty information with a user-friendly interface and comprehensive functionality.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Key Features
+<ul>
+<li>**Faculty Data CRUD:** Manage faculty data with Create, Read, Update, and Delete operations.</li>
+<li>**Personal Data Management:** Organize and update faculty's personal information.</li>
+<li>**Supervision Data Management:** Record and track academic supervision activities conducted by faculty.</li>
+<li>**Academic Assistance Data:** Manage data related to academic assistance provided by faculty.</li>
+<li>**Research and Community Service Data:** Monitor and manage research and community service activities of faculty.</li>
+<li>**Teaching and Course Data:** Store information about courses taught and teaching activities.</li>
+<li>**Achievements and Publications Data:** Manage information regarding academic achievements and publications.</li>
+<li>**Social Media Login:** Login functionality using social media accounts such as Google.</li>
+<li>**Multi-User Roles:** Supports different types of users with distinct roles, including faculty, faculty admin, university admin, and department admin.</li>
+</ul>
 
 You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
