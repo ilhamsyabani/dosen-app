@@ -23,9 +23,7 @@ The Faculty Data Management Application is a web-based solution designed to stre
 <li><strong>Multi-User Roles:</strong>  Supports different types of users with distinct roles, including faculty, faculty admin, university admin, and department admin.</li>
 </ul>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
 ## Laravel Sponsors
 
