@@ -56,7 +56,7 @@ class PenelitianController extends Controller
         ]);
         $validasiData['dosen_id'] = auth()->user()->id;
 
-        foreach (['sk_penugasa', 'laporan', 'kontrak_penelitian'] as $file) {
+        foreach (['sk_penugasan', 'laporan', 'kontrak_penelitian'] as $file) {
             if ($request->hasFile($file)) {
                 $validasiData[$file] = $request->file($file)->store($file);
             }
@@ -155,6 +155,6 @@ class PenelitianController extends Controller
         // Hapus data penelitian dari database
         $penelitian->delete();
 
-        return redirect()->route('outbound.index')->with('success', 'Data kunjungan berhasil dihapus');
+        return redirect()->route('penelitian.index')->with('success', 'Data kunjungan berhasil dihapus');
     }
 }

@@ -2,6 +2,7 @@
 <?php
 
 use App\Http\Controllers\Dosen\DosenDashboardController;
+use App\Http\Controllers\DosenLoginController;
 use App\Http\Controllers\SocialiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,13 +25,20 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('/skim', App\Http\Controllers\SkimController::class);
 });
 
+// Rute Login Dosen (email + password sebagai fallback)
+Route::prefix('dosen')->group(function () {
+    Route::get('/login', [DosenLoginController::class, 'showLoginForm'])->name('dosen.login.form')->middleware('guest:dosen');
+    Route::post('/login', [DosenLoginController::class, 'login'])->name('dosen.login')->middleware('guest:dosen');
+    Route::post('/logout', [DosenLoginController::class, 'logout'])->name('dosen.logout')->middleware('auth:dosen');
+});
+
 // Rute untuk Login dan Logout dengan Google
 Route::middleware(['guest'])->group(function () {
     Route::get('google/redirect', [SocialiteController::class, 'redirect'])->name('redirect');
     Route::get('google/callback', [SocialiteController::class, 'callback'])->name('callback');
 });
 
-// Rute Logout
+// Rute Logout Admin
 Route::post('logout', [SocialiteController::class, 'logout'])->middleware(['auth'])->name('logout');
 
 // Rute untuk Dosen (Memerlukan Middleware Auth Dosen)

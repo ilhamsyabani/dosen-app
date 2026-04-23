@@ -11,4 +11,12 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // This will silence warnings from files imported from node_modules
+          quietDeps: true 
+        }
+      }
+    }
 });

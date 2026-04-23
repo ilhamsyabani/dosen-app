@@ -11,6 +11,25 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    const ROLE_SUPER_ADMIN      = 'admin';
+    const ROLE_ADMIN_FAKULTAS   = 'Admin Fakultas';
+    const ROLE_ADMIN_DEPARTEMEN = 'Admin Departemen';
+
+    public function isSuperAdmin(): bool
+    {
+        return $this->role === self::ROLE_SUPER_ADMIN;
+    }
+
+    public function isAdminFakultas(): bool
+    {
+        return $this->role === self::ROLE_ADMIN_FAKULTAS;
+    }
+
+    public function isAdminDepartemen(): bool
+    {
+        return $this->role === self::ROLE_ADMIN_DEPARTEMEN;
+    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -52,7 +71,7 @@ class User extends Authenticatable
         return $this->belongsTo(Fakultas::class);
     }
 
-    public function deparetemen(){
+    public function departemen(){
         return $this->belongsTo(Departemen::class);
     }
 }

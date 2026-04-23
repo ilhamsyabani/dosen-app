@@ -20,7 +20,20 @@ class Dosen extends Authenticatable
         'nip',
         'email',
         'departemen_id',
+        'password',
     ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected function casts(): array
+    {
+        return [
+            'password' => 'hashed',
+        ];
+    }
 
     public function departemen(): BelongsTo
     {
@@ -99,7 +112,7 @@ class Dosen extends Authenticatable
 
     public function publikasis(): HasMany
     {
-        return $this->hasMany(publikasi::class);
+        return $this->hasMany(Publikasi::class);
     }
 
     public function bukus(): HasMany

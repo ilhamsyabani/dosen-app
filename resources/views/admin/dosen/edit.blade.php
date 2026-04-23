@@ -67,6 +67,23 @@
                         </div>
 
 
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">
+                                Password Login <span class="text-muted small">(opsional — kosongkan jika tidak diubah)</span>
+                            </label>
+                            <div class="input-group">
+                                <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                    id="inputPassword" name="password" placeholder="Kosongkan jika tidak diubah"
+                                    autocomplete="off">
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            @error('password')
+                                <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+
                         <div class="mt-4">
                             <button type="submit" class="btn btn-primary">Perbarui</button>
                         </div>
@@ -75,4 +92,18 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function(e) {
+            const passwordInput = document.getElementById('inputPassword');
+            const icon = e.currentTarget.querySelector('i');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        });
+    </script>
 @endsection

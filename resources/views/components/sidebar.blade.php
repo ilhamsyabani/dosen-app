@@ -32,8 +32,8 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link {{ request()->is('fakultas.index') ? 'active' : '' }}"
                             href="{{ route('fakultas.index') }}">Data Fakultas</a>
-                        <a class="nav-link {{ request()->is('fakultas/error*') ? 'active' : '' }}"
-                            href="{{ url('/fakultas/error') }}">Admin Fakultas</a>
+                        {{-- <a class="nav-link {{ request()->is('fakultas/error*') ? 'active' : '' }}"
+                            href="{{ url('/fakultas/error') }}">Admin Fakultas</a> --}}
                     </nav>
                 </div>
             @endif
