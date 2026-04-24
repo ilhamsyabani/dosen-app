@@ -34,32 +34,23 @@
         <li class="nav-item dropdown m-4">
             <a class="nav-link text-primary" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="avatar rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 30px; height: 30px; font-size: 20px;">
-                    {{ Auth::user()->nama[0] }}
-                </div>   
+                    {{ Auth::guard('dosen')->user()->nama[0] }}
+                </div>
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-end shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                     <i class="fas fa-user fa-sm fa-fw me-2 text-primary"></i>
-                    <span class="me-2 d-none d-lg-inline text-primary small">{{ Auth::user()->nama }}</span>
-                </a>
-                <a class="dropdown-item" href="javascript:void(0)">
-                    <i class="fas fa-cogs fa-sm fa-fw me-2 text-primary"></i>
-                    {{ __('Settings') }}
-                </a>
-                <a class="dropdown-item" href="javascript:void(0)">
-                    <i class="fas fa-list fa-sm fa-fw me-2 text-primary"></i>
-                    {{ __('Activity Log') }}
+                    <span class="me-2 d-none d-lg-inline text-primary small">{{ Auth::guard('dosen')->user()->nama }}</span>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
+                <a class="dropdown-item" href="{{ route('dosen.logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('dosen-logout-form').submit();">
+                    {{ __('Logout') }}
                 </a>
+                <form id="dosen-logout-form" action="{{ route('dosen.logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             </div>
         </li>
     </ul>

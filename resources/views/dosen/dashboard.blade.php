@@ -231,7 +231,7 @@
                             </div>
                         </div>
                         <h4 class="mb-2">{{ Auth::user()->nama }}</h4>
-                        <p class="text-muted mb-4">{{ Auth::user()->jabatans->nidn_nuptk }}<span class="mx-2">|</span> 
+                        <p class="text-muted mb-4">{{ Auth::user()->jabatans?->nidn_nuptk }}<span class="mx-2">|</span>
                             <a href="#!">{{ Auth::user()->departemen->nama }}</a>
                         </p>
                         <div class="mb-4">

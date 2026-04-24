@@ -239,6 +239,56 @@ POST /logout           → SocialiteController@logout (auth — untuk admin)
 
 ---
 
+## Konvensi Penamaan (Naming Convention)
+
+### Aturan Utama
+- **Variabel, parameter, method, class PHP** → Bahasa Inggris
+- **Nama kolom database** → Tetap Indonesian (sudah ada, tidak diubah)
+- **String label/pesan UI** → Indonesian
+- **Komentar kode** → Indonesian (agar mudah dipahami tim)
+
+### Kamus Nama Standar
+
+Gunakan nama berikut secara konsisten di seluruh kode. Jangan membuat nama baru di luar daftar ini.
+
+| Konsep | Tabel / Kolom DB | Variabel tunggal | Variabel jamak |
+|--------|-----------------|------------------|----------------|
+| Dosen/Lecturer | `dosens` | `$lecturer` | `$lecturers` |
+| Fakultas/Faculty | `fakultas` | `$faculty` | `$faculties` |
+| Departemen/Prodi | `departemens` | `$department` | `$departments` |
+| User/Admin | `users` | `$user` | `$users` |
+| Skim | `skims` | `$scheme` | `$schemes` |
+| Detail profil | `details` | `$detail` | `$details` |
+| Jabatan | `jabatans` | `$position` | `$positions` |
+| Riwayat studi | `studis` | `$study` | `$studies` |
+| Kompetensi | `kompetensis` | `$competency` | `$competencies` |
+| Pengajaran | `pengajarans` | `$teaching` | `$teachings` |
+| Bimbingan mahasiswa | `bimbingans` | `$supervision` | `$supervisions` |
+| Pengujian/penguji | `pengujians` | `$examination` | `$examinations` |
+| Bahan ajar | `bahans` | `$material` | `$materials` |
+| Pembinaan | `pembinaans` | `$coaching` | `$coachings` |
+| Pembimbingan | `pembimbingans` | `$mentoring` | `$mentorings` |
+| Kunjungan | `kunjungans` | `$visit` | `$visits` |
+| Kegiatan eksternal | `eksternals` | `$external` | `$externals` |
+| Penelitian | `penelitians` | `$research` | `$researches` |
+| Jurnal | `jurnals` | `$journal` | `$journals` |
+| Publikasi | `publikasis` | `$publication` | `$publications` |
+| Buku | `bukus` | `$book` | `$books` |
+| HaKI / Paten | `hakis` | `$intellectualProperty` | `$intellectualProperties` |
+| Pengabdian masyarakat | `pengabdians` | `$service` | `$services` |
+| PKM / Pelatihan | `pkms` | `$training` | `$trainings` |
+| Pengelola | `pengelolas` | `$manager` | `$managers` |
+| Profesi | `profesis` | `$profession` | `$professions` |
+| Penghargaan | `penghargaans` | `$award` | `$awards` |
+| Penunjang | `penunjangs` | `$supporting` | `$supportings` |
+| Delegasi | `delegasis` | `$delegation` | `$delegations` |
+| Pertemuan/seminar | `pertemuans` | `$meeting` | `$meetings` |
+
+### Strategi Penerapan
+Jangan refactor semua file sekaligus. Terapkan nama baru **hanya pada file yang sedang diedit** untuk fitur baru atau perbaikan bug. Kode lama yang belum disentuh dibiarkan dulu.
+
+---
+
 ## Konvensi Kode
 
 ### Controllers
@@ -313,4 +363,5 @@ Controller yang menangani file (Penelitian, Pengabdian) menggunakan `Storage` fa
 - **Google OAuth:** Dosen login dengan Google. Email harus sudah terdaftar di tabel `dosens`. Jika email tidak ada, login ditolak dengan pesan error.
 - **Password dosen:** Kolom `password` nullable. Admin bisa set password dari form edit/create dosen di panel admin. Dosen yang hanya pakai Google tidak perlu password.
 - **Session:** Driver database. Tabel `sessions` sudah ada di migration awal.
-- **Bahasa campuran:** Kode menggunakan campuran Indonesia dan Inggris untuk nama variabel/method. Ini adalah pola yang sudah ada — ikuti saja saat menambah kode baru.
+- **Konvensi bahasa kode:** Gunakan **Bahasa Inggris** untuk semua nama variabel, parameter, method, dan class PHP. Nama kolom database tetap Indonesian (sudah terlanjur, ubah butuh migrasi). Label/pesan UI tetap Indonesian.
+- **Email:** `MAIL_MAILER=log` — email tidak benar-benar terkirim, hanya masuk ke `storage/logs/laravel.log`. Ganti ke `smtp`/`mailgun`/`resend` sebelum production. Fitur reset password admin tidak akan berfungsi selama masih pakai driver `log`.
